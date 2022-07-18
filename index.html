@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name=" viewport " content="width=devoce-width, initial-scale=1.0">
+        <tilte> </tilte>
+    <link rel="stylesheet"  href="style.css">
+    <script src="https://kit.fontawesome.com/e1ff6bd166.js" crossorigin="anonymous"></script>
+    <body>
+
+    <div class="container">
+        <div class="star-container">
+        <button class="star star5" data-value="5" onclick="rate(this)"> 
+            <i class="fa-regular fa-star"></i></button>
+        <button class="star star4" data-value="4" onclick="rate(this)"> 
+            <i class="fa-regular fa-star"></i></button>
+        <button class="star star3" data-value="3" onclick="rate(this)"> 
+            <i class="fa-regular fa-star"></i></button>
+        <button class="star star2" data-value="2" onclick="rate(this)"> 
+            <i class="fa-regular fa-star"></i></button>
+        <button class="star star1" data-value="1" onclick="rate(this)"> 
+            <i class="fa-regular fa-star"></i></i></button>
+
+    </div>
+    <p id="rating"> Rate Us :)</p>
+    </div>
+    </body>
+<script>
+    const rating=document.querySelector("#rating");
+    function rate(e){
+        const stars=document.querySelectorAll(".star");
+        [...stars].map((star)=> star.classList.remove("hoverd"));
+        e.classList.add("hovered")
+        let points=["Poor","Fair","Average","Good","Excellenet"];
+        rating.innerHTML=points[e.getAttribute("data-value") -1];
+        console.log(e.getAttribute("data-value"));
+    }
+</script>
+</html>
